@@ -1,6 +1,7 @@
 package bot
 
 import (
+	"discordBot/clients"
 	"fmt"
 	"github.com/bwmarrin/discordgo"
 	"log"
@@ -9,14 +10,14 @@ import (
 )
 
 type Bot struct {
-	Token   string
-	Session *discordgo.Session
+	Token           string
+	Session         *discordgo.Session
+	Weather         *clients.WeatherClient
+	ReminderManager *ReminderManager
 }
 
-func NewBot(token string) *Bot {
-	return &Bot{
-		Token: token,
-	}
+func NewBot(token string, weather *clients.WeatherClient) *Bot {
+	return &Bot{Token: token, Weather: weather, ReminderManager: &ReminderManager{}}
 }
 
 func (b *Bot) Run() {

@@ -2,12 +2,23 @@ package main
 
 import (
 	"discordBot/bot"
+	"discordBot/clients"
 	"fmt"
+	"time"
 )
 
 func main() {
-	token := "MTIwMjI5MDI2NjE1Mzk0NzIwOA.GdXquL.5_gTjchHc-0ueTgY4rRPtnFw8YmgPvJbdsn-2s"
+	token := ""
+	weatherApiKey := ""
+	weatherApiClient := clients.NewWeatherClient(weatherApiKey)
 	fmt.Println(token)
-	newBot := bot.NewBot(token)
+	newBot := bot.NewBot(token, weatherApiClient)
 	newBot.Run()
+	go func() {
+		for {
+			newBot.ReminderManager.CheckReminders(newBot.Session)
+			time.Sleep(1 * time.Minute)
+		}
+	}()
+
 }
