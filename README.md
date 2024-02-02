@@ -30,7 +30,7 @@ This Discord bot provides various functionalities, including weather information
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/yourusername/discord-bot.git
+   git clone https://github.com/zhosyaaa/discord-bot.git
    cd discord-bot
 
 2. Replace the values of the variables in the .env file :
