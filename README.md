@@ -21,9 +21,9 @@ This Discord bot provides various functionalities, including weather information
 ### Prerequisites
 
 - Go programming language installed on your machine.
-- Discord bot token.
-- OpenWeatherMap API key for the weather functionality.
-- Google Cloud API key for the translation functionality.
+- Discord bot token. https://discord.com/developers/applications
+- OpenWeatherMap API key for the weather functionality. https://openweathermap.org/api
+- Google Cloud API key for the translation functionality. https://console.cloud.google.com/
 
 ### Installation
 
@@ -32,9 +32,8 @@ This Discord bot provides various functionalities, including weather information
    ```bash
    git clone https://github.com/yourusername/discord-bot.git
    cd discord-bot
-   
-2. Create a .env file and add the following configuration:
 
+2. Replace the values of the variables in the .env file :
     ```dotenv
     TOKEN=your_discord_bot_token
     WEATHER_API_KEY=your_openweathermap_api_key
